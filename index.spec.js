@@ -59,6 +59,8 @@ describe("Log test", () => {
       // https://nut-tree.github.io/apidoc/classes/region_class.Region.html
       let region = await screen.waitFor(imageResource("settings-icon.png"));
 
+      console.log("Found Settings Icon", region);
+
       await mouse.move(centerOf(region));
       await mouse.leftClick();
     });
@@ -67,13 +69,15 @@ describe("Log test", () => {
   describe("click 'about' icon", () => {
     it("should find a match", async () => {
       jest.setTimeout(10000);
+      screen.config.resourceDirectory = "assets/mac/";
 
       let region = await screen.waitFor(imageResource("menu-item-about.png"));
+
+      console.log("Found About Icon", region);
 
       await mouse.move(centerOf(region));
       jest.setTimeout(10000);
 
-      screen.config.resourceDirectory = "assets/mac/";
       await mouse.leftClick();
     });
   });

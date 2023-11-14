@@ -4,9 +4,9 @@ This is an example of recording desktop automation with Dashcam. Requires Mac an
 
 ## Example Output
 
-[![Dashcam Raycast Test](https://replayable-api-production.herokuapp.com/replay/6552bb03c4eea500634c3b4d/gif?shareKey=1KU3FABHzHW6zFRYp5kemg)](https://app.dashcam.io/replay/6552bb03c4eea500634c3b4d?share=1KU3FABHzHW6zFRYp5kemg)
+[![Raycast UI Test](https://replayable-api-production.herokuapp.com/replay/6552bc5447be4f0062bb30e0/gif?shareKey=VrYbKlvHKa2ZpuzbaMM1g)](https://app.dashcam.io/replay/6552bc5447be4f0062bb30e0?share=VrYbKlvHKa2ZpuzbaMM1g)
 
-Watch [Dashcam Raycast Test](https://app.dashcam.io/replay/6552bb03c4eea500634c3b4d?share=1KU3FABHzHW6zFRYp5kemg) on Dashcam
+Watch [Raycast UI Test](https://app.dashcam.io/replay/6552bc5447be4f0062bb30e0?share=VrYbKlvHKa2ZpuzbaMM1g) on Dashcam
 
 ## Setup
 
