@@ -27,13 +27,20 @@ const execa = util.promisify(exec);
 let raycastApp;
 let raycastLog;
 
+afterAll(done => {
+  exec(`killall "log"`)
+  done();
+})
+
+jest.setTimeout(10000);
+
 describe("Log test", () => {
   describe("install", () => {
-    it("should run Raycast", async () => {
+    it("should run Raycast", () => {
       raycastApp = exec(`open -a Raycast`);
     });
 
-    it("should run spawn logs", async () => {
+    it("should run spawn logs", () => {
       raycastLog = exec(
         `log stream --predicate "subsystem == 'com.raycast.macos'" --level debug --style compact >> ~/Desktop/ray.cast.log`
       );
@@ -52,7 +59,6 @@ describe("Log test", () => {
 
   describe("click settings icon", () => {
     it("should find a match", async () => {
-      jest.setTimeout(10000);
 
       screen.config.resourceDirectory = "assets/mac/";
 
@@ -68,7 +74,6 @@ describe("Log test", () => {
 
   describe("click 'about' icon", () => {
     it("should find a match", async () => {
-      jest.setTimeout(10000);
       screen.config.resourceDirectory = "assets/mac/";
 
       let region = await screen.waitFor(imageResource("menu-item-about.png"));
@@ -76,7 +81,6 @@ describe("Log test", () => {
       console.log("Found About Icon", region);
 
       await mouse.move(centerOf(region));
-      jest.setTimeout(10000);
 
       await mouse.leftClick();
     });
