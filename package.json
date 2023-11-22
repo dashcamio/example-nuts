@@ -24,8 +24,11 @@
     "@nut-tree/nut-js": "^3.1.2",
     "jest": "^26.6.3"
   },
-  "dependencies": {
+  "_dependencies": {
     "@nut-tree/nl-matcher": "^2.2.0",
     "@nut-tree/plugin-ocr": "^1.0.2"
+  },
+  "dependencies": {
+    "cross-fetch": "^4.0.0"
   }
 }
