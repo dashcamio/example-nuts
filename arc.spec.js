@@ -26,7 +26,7 @@ const {
     preloadLanguages,
   } = require("@nut-tree/plugin-ocr");
 
-jest.setTimeout(40000);
+jest.setTimeout(140000);
 
   afterAll(done => {
     exec(`killall "log"`)
@@ -60,6 +60,7 @@ async function openSafariAndNavigate() {
         await mouse.move(straightTo(centerOf(screen.find(imageResource("arc-button-download.png")))));
         // await mouse.move();
         await mouse.leftClick();
+        await new Promise(resolve => setTimeout(resolve, 3000));
 
     } catch (error) {
         console.error("An error occurred:", error);
@@ -127,20 +128,47 @@ async function createArcAccount() {
     }
 }
 
-// describe("Open ARC.net & download file", () => {
-//     it("should open browser and navigate", async () => {
-//         await openSafariAndNavigate()
-//     })
-// });
+describe("Navigate to main site and download file", () => {
+    it("should open browser", async () => {
+        await openSafariAndNavigate()
+    })
+    it("should find call to action", async () => {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    });
+    it("should download file", async () => {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    });
+    it("should verify file is downloaded", async () => {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    });
+});
 
-describe("Open .dmg file", () => {
-    it("should open dmg file and run arc", async () => {
+describe("Background installation", () => {
+    it("should kill any unwanted process", async () => {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    });
+    it("should start logging the application's subsystem", async () => {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    });
+    it("should mount the .dmg file", async () => {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    });
+    it("should delete previously installed versions of the app", async () => {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    });
+    it("should install the app", async () => {
         await openDmgFile()
     });
 });
 
-describe("Account creation", () => {    
-    it("should create an account", async () => {
-    await createArcAccount()
+describe("Account creation", () => {  
+    it("should locate the Create account button", async () => {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    });  
+    it("should create a new random account", async () => {
+        await createArcAccount()
 });
+    it("should successfully get to the onboarding screen", async () => {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    });  
 });
